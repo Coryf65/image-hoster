@@ -137,7 +137,7 @@ docker run -d \
     -e HOST=0.0.0.0 \
     -e PORT=8000 \
     -e IMAGE_HOSTER_DIR=/app/images \
-    -v image_hoster_images:/app/images \
+    -v image_hoster_data:/app/images \
     image-hoster:alpine
 ```
 
@@ -153,5 +153,5 @@ docker rm -f image-hoster
 
 Remove volume (optional):
 ```bash
-docker volume rm image_hoster_images
+docker volume rm image_hoster_data
 ```

@@ -9,8 +9,8 @@ services:
       PORT: 8000
       IMAGE_HOSTER_DIR: /app/images
     volumes:
-      - image_hoster_images:/app/images
+      - image_hoster_data:/app/images
     restart: unless-stopped
 
 volumes:
-  image_hoster_images:
+  image_hoster_data:
