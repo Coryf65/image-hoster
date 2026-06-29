@@ -1,11 +1,18 @@
 # image hoster
 
-a simple static image server for hosting images for other web applications
+a simple static image server for hosting images for other web application. 
+
+NO security!!! very simple hosting meant for use with local sites not exposed to the web.
+
+I use this to host images for my locally hosted web apps, like [Tandoor](https://tandoor.dev/) for having images inside the markdown.
 
 
-## Get Started 
+## Get is running 
 
-### Start the server
+
+### Local development
+
+#### Start the server
 
 move into the directory
 ```bash
@@ -24,7 +31,7 @@ python main.py
 
 - You should see Flask start on http://localhost:8000
 
-### Upload a test image from another terminal
+#### Upload a test image from another terminal
 
 move into the directory
 ```bash
@@ -55,7 +62,7 @@ Expected response is JSON with fields like:
 }
 ```
 
-### Verify the image endpoint
+#### Verify the image endpoint
 
 Copy the url from the upload response
 Open it in a browser, or run:
@@ -66,12 +73,12 @@ curl -I "PASTE_URL_HERE"
 
 You should get HTTP 200 and an image content type.
 
-### Test Markdown embedding
+#### Test Markdown embedding
 Use the returned markdown value directly, example format:
 <img src="http://localhost:8000/images/....png" alt="test-image.png">
 
 
-## Run Tests
+#### Run Tests
 
 Open terminal in `/mnt/sdb1/Code/_MyApps/Python/image-hoster`
 Run:
