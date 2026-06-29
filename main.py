@@ -86,6 +86,22 @@ def serve_image(filename: str):
     return send_from_directory(UPLOAD_DIR, filename)
 
 
+@app.get("/images")
+def list_images():
+    images = []
+    for file in UPLOAD_DIR.iterdir():
+        if file.is_file() and is_allowed_file(file.name):
+            image_url = url_for("serve_image", filename=file.name, _external=True)
+            images.append(
+                {
+                    "filename": file.name,
+                    "url": image_url,
+                    "markdown": f"![{file.name}]({image_url})",
+                }
+            )
+    return jsonify(images)
+
+
 if __name__ == "__main__":
     host = os.getenv("HOST", "0.0.0.0")
     port = int(os.getenv("PORT", "8000"))
