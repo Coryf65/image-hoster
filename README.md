@@ -7,7 +7,7 @@ NO security!!! very simple hosting meant for use with local sites not exposed to
 I use this to host images for my locally hosted web apps, like [Tandoor](https://tandoor.dev/) for having images inside the markdown.
 
 
-## Get is running 
+## Get it running 
 
 
 ### Local development
