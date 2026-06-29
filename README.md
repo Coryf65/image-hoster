@@ -6,9 +6,18 @@ NO security!!! very simple hosting meant for use with local sites not exposed to
 
 I use this to host images for my locally hosted web apps, like [Tandoor](https://tandoor.dev/) for having images inside the markdown.
 
+## Endpoints
+
+- upload a file: `/upload`
+- image endpoint": `/images/<filename>`
+- see all files saved: `/images`
+    example: 
+    
+- check health: `/health`
+
+
 
 ## Get it running 
-
 
 ### Local development
 
@@ -87,11 +96,11 @@ python -m unittest discover -s tests -v
 ```
 
 
-## Run with Docker (Alpine)
+### Run with Docker (Alpine)
 
 This project includes a Docker image based on Alpine Linux via `python:3.12-alpine`.
 
-### Option 1: Docker Compose (recommended)
+#### Option 1: Docker Compose (recommended)
 
 Build and run:
 ```bash
@@ -113,7 +122,7 @@ Stop and remove the volume too:
 docker compose down -v
 ```
 
-### Option 2: Plain Docker CLI
+#### Option 2: Plain Docker CLI
 
 Build image:
 ```bash

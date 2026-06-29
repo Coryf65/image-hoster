@@ -30,6 +30,8 @@ def index():
             "service": "image-hoster",
             "upload_endpoint": "/upload",
             "image_endpoint": "/images/<filename>",
+            "list_endpoint": "/images",
+            "health_endpoint": "/health",
         }
     )
 
