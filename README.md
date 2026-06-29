@@ -45,6 +45,15 @@ Expected response is JSON with fields like:
 }
 ```
 
+*example*
+```json
+{
+    "filename":"b2964707c6c541aeaec85ea2c4089ddd.webp",
+    "markdown":"![How-to-make-Chicken-and-Dumplings-1.webp](http://localhost:8000/images/b2964707c6c541aeaec85ea2c4089ddd.webp)","original_filename":"How-to-make-Chicken-and-Dumplings-1.webp",
+    "url":"http://localhost:8000/images/b2964707c6c541aeaec85ea2c4089ddd.webp"
+}
+```
+
 ### Verify the image endpoint
 
 Copy the url from the upload response
