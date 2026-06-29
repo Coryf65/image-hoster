@@ -1,0 +1,16 @@
+services:
+  image-hoster:
+    build: .
+    container_name: image-hoster
+    ports:
+      - "8000:8000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8000
+      IMAGE_HOSTER_DIR: /app/images
+    volumes:
+      - image_hoster_images:/app/images
+    restart: unless-stopped
+
+volumes:
+  image_hoster_images:

@@ -68,3 +68,64 @@ Run:
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+
+## Run with Docker (Alpine)
+
+This project includes a Docker image based on Alpine Linux via `python:3.12-alpine`.
+
+### Option 1: Docker Compose (recommended)
+
+Build and run:
+```bash
+docker compose up -d --build
+```
+
+The container will:
+- expose the app on `http://localhost:8000`
+- map container port `8000` to host port `8000`
+- persist uploaded images in a named Docker volume `image_hoster_images`
+
+Stop it:
+```bash
+docker compose down
+```
+
+Stop and remove the volume too:
+```bash
+docker compose down -v
+```
+
+### Option 2: Plain Docker CLI
+
+Build image:
+```bash
+docker build -t image-hoster:alpine .
+```
+
+Run container on the same port and mount a named volume:
+```bash
+docker run -d \
+    --name image-hoster \
+    -p 8000:8000 \
+    -e HOST=0.0.0.0 \
+    -e PORT=8000 \
+    -e IMAGE_HOSTER_DIR=/app/images \
+    -v image_hoster_images:/app/images \
+    image-hoster:alpine
+```
+
+Check logs:
+```bash
+docker logs -f image-hoster
+```
+
+Stop and remove container:
+```bash
+docker rm -f image-hoster
+```
+
+Remove volume (optional):
+```bash
+docker volume rm image_hoster_images
+```
