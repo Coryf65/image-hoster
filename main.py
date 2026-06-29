@@ -34,6 +34,11 @@ def index():
     )
 
 
+@app.get("/health")
+def health():
+    return jsonify({"status": "ok"})
+
+
 @app.post("/upload")
 def upload_image():
     if "image" not in request.files:
